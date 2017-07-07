@@ -13,12 +13,13 @@ var drillParser = (function () {
     };
     function getAnswers(answers) {
         let answTxt = "";
-        for (let i = 0; i < answers.length; i++) {
-            const answer = answers[i];
+        let answerCounter = 0;
+        for (let i = answers.length; i; i--) {
+            const answer = answers[i - 1];
             if (answer.isCorrect) {
                 answTxt += '>>>';
             }
-            answTxt += alphabet[i] + ') ' + answer.txt + newLineCharacter;
+            answTxt += alphabet[answerCounter++] + ') ' + answer.txt + newLineCharacter;
         }
         return answTxt;
     }
@@ -84,7 +85,12 @@ var miner = (function () {
         return result;
     }
     function getQuestionTxt(el) {
-        return el.children[0].children[1].childNodes[0].nodeValue;
+        let candidates = el.getElementsByClassName('dataValueRead');
+        if (candidates.length == 1) {
+            return candidates[0].innerText;
+        } else {
+            return el.children[0].children[1].childNodes[0].nodeValue;
+        }
     }
     return {
         'run': run
