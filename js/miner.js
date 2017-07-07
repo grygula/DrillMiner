@@ -1,10 +1,36 @@
+var drillParser = (function () {
+    const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    function parseData(data) {
+        let finalTxt = "";
+        for (let i = data.length; i; i--) {
+            finalTxt += data[i-1].question;
+            finalTxt += "\n";
+            finalTxt += getAnswers(data[i - 1].answers);
+            finalTxt += "\n";
+        }
+        console.log(finalTxt);
+    };
+    function getAnswers(answers) {
+        let answTxt = "";
+        for (let i = 0; i < answers.length; i++) {
+            const answer = answers[i];
+            if (answer.isCorrect) {
+                answTxt += '>>>';
+            }
+            answTxt += alphabet[i] + ') ' + answer.txt + '\n';
+        }
+        return answTxt;
+    }
+    return { 'parseData': parseData };
+})();
+
 var miner = (function () {
     const continueButtonClass = "LessonNavComplete", ifId = "PR_EndUserDashboardIfr";
     function testRun() {
-        console.log('Code is here');
         let testPage = getIframeContent(ifId);
         if (isTestAnswered(testPage, continueButtonClass)) {
-            getQuestions(testPage);
+            const data = getQuestions(testPage);
+            drillParser.parseData(data);
         } else {
             console.warn("Do test first");
         }
@@ -17,30 +43,27 @@ var miner = (function () {
 
     function isTestAnswered(el, clazz) {
         let candidates = el.getElementsByClassName(clazz);
-        let isValid = candidates && candidates.length == 1;
-        return isValid;
+        return candidates && candidates.length == 1;
     }
 
     function getQuestions(el) {
         const bestClassToGetQuestions = 'item-3 RichTextContent';
-        let cadidatesSections = el.getElementsByClassName(bestClassToGetQuestions)
-        let candidatesSize = cadidatesSections.length;
-        let questionsData = [];
-        for (candidatesSize; candidatesSize; candidatesSize--) {
+        let cadidatesSections = el.getElementsByClassName(bestClassToGetQuestions),
+            questionsData = [];
+        for (let candidatesSize = cadidatesSections.length; candidatesSize; candidatesSize--) {
             let questionData = {};
             let candidate = cadidatesSections[candidatesSize - 1];
-            questionData.txt = getQuestionTxt(candidate);
+            questionData.question = getQuestionTxt(candidate);
             questionData.answers = getAnswers(candidate);
             questionsData.push(questionData);
         }
-        console.log(questionsData);
+        return questionsData;
     }
 
     function getAnswers(questionElement) {
         let labels = getLabels(getAnswersSection(questionElement)),
-            labelsSize = labels.length,
             answers = [];
-        for (labelsSize; labelsSize; labelsSize--) {
+        for (let labelsSize = labels.length; labelsSize; labelsSize--) {
             answers.push(getAnswerBaseOnLabel(labels[labelsSize - 1]));
         }
         return answers;
