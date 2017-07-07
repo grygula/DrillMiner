@@ -1,14 +1,15 @@
 var drillParser = (function () {
     const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    const newLineCharacter = '\n';
     function parseData(data) {
         let finalTxt = "";
         for (let i = data.length; i; i--) {
-            finalTxt += data[i-1].question;
-            finalTxt += "\n";
+            finalTxt += data[i - 1].question;
+            finalTxt += newLineCharacter;
             finalTxt += getAnswers(data[i - 1].answers);
-            finalTxt += "\n";
+            finalTxt += newLineCharacter;
         }
-        console.log(finalTxt);
+        return finalTxt;
     };
     function getAnswers(answers) {
         let answTxt = "";
@@ -17,7 +18,7 @@ var drillParser = (function () {
             if (answer.isCorrect) {
                 answTxt += '>>>';
             }
-            answTxt += alphabet[i] + ') ' + answer.txt + '\n';
+            answTxt += alphabet[i] + ') ' + answer.txt + newLineCharacter;
         }
         return answTxt;
     }
@@ -26,18 +27,19 @@ var drillParser = (function () {
 
 var miner = (function () {
     const continueButtonClass = "LessonNavComplete", ifId = "PR_EndUserDashboardIfr";
-    function testRun() {
+    function run() {
         let testPage = getIframeContent(ifId);
         if (isTestAnswered(testPage, continueButtonClass)) {
             const data = getQuestions(testPage);
-            drillParser.parseData(data);
+            const result = drillParser.parseData(data);
+            console.log(result);
         } else {
-            console.warn("Do test first");
+            console.error("Do test first");
         }
     }
 
     function getIframeContent(iframeId) {
-        var iframe = document.getElementById(iframeId);
+        let iframe = document.getElementById(iframeId);
         return iframe.contentDocument || iframe.contentWindow.document;
     }
 
@@ -85,7 +87,7 @@ var miner = (function () {
         return el.children[0].children[1].childNodes[0].nodeValue;
     }
     return {
-        'testRun': testRun
+        'run': run
     }
 })();
-miner.testRun();
+miner.run();
