@@ -2,79 +2,26 @@
 <html>
 <head>
   <title>Getting Started Extension's Popup</title>
-  <style>
-    body {
-      font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-      font-size: 100%;
-      width: 500px;
-      height: 500px;
-    }
-
-    .invalid .infoPegaPage {
-      display: block;
-    }
-
-    .invalid .read {
-      display: none;
-    }
-
-    .info,
-    .read,
-    .read textarea {
-      width: 100%;
-      margin: auto;
-      text-align: center;
-    }
-
-    .info span {
-      color: red;
-      font-weight: bolder;
-      display: none;
-    }
-
-    .badApp .info .badApp,
-    .badPage .info .badPage,
-    .badAnswers .info .badAnswers {
-      display: inline;
-    }
-
-    .read textarea {
-      margin-top: 10px;
-    }
-
-    .test {
-      text-align: center;
-      font-size: 8pt;
-    }
-
-    .test #testConsole {
-      width: 100%;
-      height: 300px;
-      font-size: 6pt;
-    }
-
-</style>
-<script src="js/parser.js"></script>
-<script src="js/support.js"></script>
+ 
+<link rel="stylesheet" href="style/main.css">
+<!-- <script src="js/parser.js"></script>-->
+<!-- <script src="js/support.js"></script> -->
 </head>
 
-<body class="">
-  <div class="info">
+<body class="sucLong">
+  <div class="read">
+    <textarea class="drillText" id="drillText">Temporary data</textarea>
+    <button id='cpToCLB'> Copy to Cliboard </button>
+    <button id='shFull'> Display parsed content</button>
+  </div>
+<section class="info">
+    <span class="succInCliboard"> Data ready in your Cliboard</span>
+    <span class="succNoCLBSupport">Copy to Cliboard is not supported </span>
+</section>
+  <section class="infoError">
     <span class="badApp"> Sorry extension does not work</span>
     <span class="badPage"> This page is not supported</span>
-    <span class="badAnswers"> Please answer questions first</span>
-  </div>
-  <div class="read">
-    <textarea class="drillText" id="drillText"></textarea>
-
-  </div>
-  <section class='test'>
-    <p>_______Test_______</p>
-    <button id='testClassSwitch'>Switch class</button>
-    <div>
-      <div>Status</div>
-      <div><textarea id="testConsole"></textarea>
-      </div>
+    <span class="badNotAnswered"> Please answer questions first</span>
   </section>
 </body>
 

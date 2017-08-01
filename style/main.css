@@ -1,0 +1,37 @@
+ body {
+      font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+      font-size: 100%;
+    }
+    .read,
+    .info,
+    .infoError {
+      width: 100%;
+      margin: auto;
+      text-align: center;
+      min-width: 200px;
+      display: none;
+    }
+    .info span {
+      color: green;
+      font-weight: bolder;
+    }
+    .infoError span {
+      color: red;
+      font-weight: bolder;
+    }
+     
+    .sucLong .info,
+    .sucLong .read,
+    .succShort .info,
+    .succShort .read{
+         display: block;
+    }
+    .succShort .read #cpToCLB,
+    .succShort .info .succNoCLBSupport{
+        display: none;
+    }
+    .sucLong .info .succInCliboard,
+    .sucLong .read #shFull{
+        display: none;
+    }
+   

@@ -9,13 +9,16 @@ const CSS_CLASS_NAME = {
     INVALID: 'invalid',
     BAD_APP: 'badApp',
     BAD_PAGE: 'badPage',
-    BAD_ANSWER: 'badAnswers'
+    BAD_ANSWER: 'badNotAnswered',
+    SUCC_SHORT: 'succShort',
+    SUCC_LONG: 'sucLong',
+    SUCC_NO_CLIPBOARD :'sucCpbF'
 }
 const LKP = {
     ACADEMY_PAGE: 'pegaacademyapp.pega.com'
 }
 const mlg = function (txt) {
-    txtLg.value = txtLg.value + '\n' + txt;
+    console.log(txt);
 }
 
 let sendMessageToPage = function () { mlg('Communication NA'); };

@@ -8,7 +8,7 @@ if (!miner) {
             } else {
                 return { 'status': 0 };
             }
-        }
+        } 
 
         function getIframeContent(iframeId) {
             let iframe = document.getElementById(iframeId);
