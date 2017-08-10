@@ -1,27 +1,59 @@
 <!doctype html>
 <html>
+
 <head>
-  <title>Getting Started Extension's Popup</title>
- 
-<link rel="stylesheet" href="style/main.css">
-<!-- <script src="js/parser.js"></script>-->
-<!-- <script src="js/support.js"></script> -->
+  <title>Academy miner for Drill</title>
+
+  <link rel="stylesheet" href="style/main.css">
+  <script src="js/dev.js"></script>
+  <!-- <script src="js/parser.js"></script>-->
+  <!-- <script src="js/support.js"></script> -->
 </head>
 
-<body class="sucLong">
-  <div class="read">
-    <textarea class="drillText" id="drillText">Temporary data</textarea>
-    <button id='cpToCLB'> Copy to Cliboard </button>
-    <button id='shFull'> Display parsed content</button>
-  </div>
-<section class="info">
-    <span class="succInCliboard"> Data ready in your Cliboard</span>
-    <span class="succNoCLBSupport">Copy to Cliboard is not supported </span>
-</section>
+<body class="">
+  <section class="header">
+  </section>
+  <section class="succShortSection">
+    <span class="info">Data ready in your Cliboard</span>
+    <button id="full">Full view</button>
+  </section>
+  <section class="succLongSection">
+    <span class="noCLBsupport">Copy is not supported, <br> use Ctrl+A & Ctrl+C </span>
+    <textarea class="fullTxt" id="drillText" >
+1 Which of the following tools would you use to generate the application structure in Pega 7? (Choose One)
+A) Application Accelerator
+B) Application Profiler
+C) Application Explorer
+>>>D) Application Express
+
+2 You need to create an application that does not require reuse at the application level. It is unlikely that the application will be extended in the future. Which application structure would you generate? (Choose One)
+A) Framework Only
+>>>B) Implementation Only
+C) Framework and Implementation
+
+3 Which of the following require the use of the advanced configuration options in the Application Express? (Choose Two)
+A) To create an organization
+>>>B) To create a division reuse layer
+>>>C) To provide a custom framework name
+D) To specify business objectives
+
+4 Which of the following is the most appropriate method to add a case type to an existing application? (Choose One)
+>>>A) Use Case Explorer
+B) Use Application Express
+C) Add it manually
+D) Use Application Accelerator
+    </textarea>
+    <button id='copyToCLB'> Copy to Cliboard </button>
+  </section>
   <section class="infoError">
-    <span class="badApp"> Sorry extension does not work</span>
-    <span class="badPage"> This page is not supported</span>
-    <span class="badNotAnswered"> Please answer questions first</span>
+    <span class="badAppTxt"> Sorry something went wrong, try to restart computer ...</span>
+    <span class="badPageNATxt"> This page is not supported</span>
+    <span class="badPageNotQuizTxt"> Go to Quiz page and answer questions first</span>
+    <span class="badNotAnsweredTxt"> Please answer questions first</span>
+  </section>
+  <section class="footer">
+  </section>
+  <section class="dev" id="devSection">
   </section>
 </body>
 

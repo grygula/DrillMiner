@@ -1,37 +1,104 @@
  body {
-      font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-      font-size: 100%;
-    }
-    .read,
-    .info,
-    .infoError {
-      width: 100%;
-      margin: auto;
-      text-align: center;
-      min-width: 200px;
-      display: none;
-    }
-    .info span {
-      color: green;
-      font-weight: bolder;
-    }
-    .infoError span {
-      color: red;
-      font-weight: bolder;
-    }
-     
-    .sucLong .info,
-    .sucLong .read,
-    .succShort .info,
-    .succShort .read{
-         display: block;
-    }
-    .succShort .read #cpToCLB,
-    .succShort .info .succNoCLBSupport{
-        display: none;
-    }
-    .sucLong .info .succInCliboard,
-    .sucLong .read #shFull{
-        display: none;
-    }
-   
+   font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+   font-size: 10pt;
+   width: 200px;
+   margin-bottom: 10px;
+   border: 2px solid black;
+ }
+ 
+ .succShort .succShortSection, .succLong .succLongSection, .succNoCLB .succLongSection, .badApp .badAppTxt, .badPageNA .badPageNATxt, .badPageNotQuiz .badPageNotQuizTxt, .badNotAnswered .badNotAnsweredTxt, .error .infoError {
+   display: block;
+ }
+ 
+ .succShortSection, .succLongSection {
+   color: #175D34;
+   font-weight: bolder;
+ }
+ 
+ .succShortSection, .succLongSection, .error .infoError {
+   margin-left: 5px;
+   margin-right: 5px;
+   text-align: center;
+   min-height: 55px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ #drillText{
+   font-size: 0.7em;
+   min-height: 400px;
+ }
+ .success button {
+   margin-top: 10px;
+   background-color: #37DD7A;
+   border: none;
+   color: white;
+   padding: 4px;
+   font-weight: 600;
+   font-size: 0.9em;
+ }
+ 
+ .infoError >* {
+   vertical-align: middle;
+ }
+ 
+ .succShortSection > *, .succLongSection > * {
+   width: 100%;
+   margin: auto;
+ }
+ 
+ .succShortSection, .succLongSection, .infoError>span, .succLong .succLongSection .noCLBsupport, .succNoCLB .succLongSection #copyToCLB, .infoError {
+   display: none;
+ }
+ 
+ .header {
+   width: 100%;
+   height: 50px;
+   background-repeat: no-repeat;
+   background-position: center;
+   margin: 0px;
+   padding: 0px;
+   margin-bottom: 10px;
+ }
+ 
+ .success .header {
+   background-color: #37DD7A;
+ }
+ .noCLBsupport{
+   display: block;
+   padding-bottom: 5px;
+ }
+ .succLong .header, .succNoCLB .header {
+   background-image: url(img/cloud-check.png);
+ }
+ 
+ .error {
+   color: #D36E4A;
+   font-weight: 700;
+ }
+ 
+ .succShort .header {
+   background-image: url(img/cloud-down.png);
+ }
+ 
+ .error .header {
+   background-color: #EA6E5E;
+   background-image: url(img/cloud-error.png);
+ }
+ 
+ .footer {
+   margin-bottom: 10px;
+ }
+ /*dev */
+ 
+ #devSection {
+   margin-top: 30px;
+   position: absolute;
+   right: 10px;
+   top: 10px;
+ }
+ 
+ #devSection button {
+   display: block;
+   margin-top: 10px;
+ }

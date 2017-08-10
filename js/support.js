@@ -6,13 +6,13 @@ const ERROR_CODE = {
     NO_ANSWERS: 0
 }
 const CSS_CLASS_NAME = {
-    INVALID: 'invalid',
-    BAD_APP: 'badApp',
-    BAD_PAGE: 'badPage',
-    BAD_ANSWER: 'badNotAnswered',
-    SUCC_SHORT: 'succShort',
-    SUCC_LONG: 'sucLong',
-    SUCC_NO_CLIPBOARD :'sucCpbF'
+    BAD_APP: ['error','badApp'],
+    BAD_PAGE_NOT_ACADEMY:['error', 'badPageNA'],
+    BAD_PAGE_ON_ACADEMY:['error','badPageNotQuiz'],
+    BAD_ANSWER: ['error','badNotAnswered'],
+    SUCC_SHORT: ['success','succShort'],
+    SUCC_LONG: ['success','succLong'],
+    SUCC_NO_CLIPBOARD :['success','succNoCLB']
 }
 const LKP = {
     ACADEMY_PAGE: 'pegaacademyapp.pega.com'
@@ -74,7 +74,8 @@ function isValidURL(url) {
     return url.indexOf(LKP.ACADEMY_PAGE) !== -1;
 }
 function switchBodyClass(clazzName) {
-    document.body.classList.toggle(clazzName);
+    document.body.classList = "";
+    document.body.classList.add(...clazzName);
 }
 function invalid(reason) {
     let clazzToSet = "";
@@ -83,7 +84,7 @@ function invalid(reason) {
             clazzToSet = CSS_CLASS_NAME.BAD_APP;
             break;
         case ERROR_CODE.INCORRECT_PAGE:
-            clazzToSet = CSS_CLASS_NAME.BAD_PAGE;
+            clazzToSet = CSS_CLASS_NAME.BAD_PAGE_NOT_ACADEMY;
             break;
         case ERROR_CODE.NO_ANSWERS:
             clazzToSet = CSS_CLASS_NAME.BAD_ANSWER;
@@ -93,14 +94,6 @@ function invalid(reason) {
     mlg(clazzToSet);
     switchBodyClass(CSS_CLASS_NAME.INVALID);
     switchBodyClass(clazzToSet);
-}
-function testSwitch() {
-    mlg("hej" + CSS_CLASS_NAME.INVALID);
-
-    //switchBodyClass(CSS_CLASS_NAME.INVALID);
-    sendMessageToPage("Hej nowa opcja");
-    return false;
-
 }
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('testClassSwitch').onclick = testSwitch;
