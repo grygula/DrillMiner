@@ -91,12 +91,8 @@ function invalid(reason) {
             break;
         default:
     }
-    mlg(clazzToSet);
-    switchBodyClass(CSS_CLASS_NAME.INVALID);
     switchBodyClass(clazzToSet);
 }
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('testClassSwitch').onclick = testSwitch;
-    txtLg = document.getElementById('testConsole');
     workWithTabs();
 });

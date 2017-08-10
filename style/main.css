@@ -2,8 +2,7 @@
    font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
    font-size: 10pt;
    width: 200px;
-   margin-bottom: 10px;
-   border: 2px solid black;
+   margin: 2px;
  }
  
  .succShort .succShortSection, .succLong .succLongSection, .succNoCLB .succLongSection, .badApp .badAppTxt, .badPageNA .badPageNATxt, .badPageNotQuiz .badPageNotQuizTxt, .badNotAnswered .badNotAnsweredTxt, .error .infoError {
