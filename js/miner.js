@@ -1,25 +1,33 @@
 if (!miner) {
     var miner = (function () {
-        const continueButtonClass = "LessonNavComplete", ifId = "PR_EndUserDashboardIfr";
         function run() {
-            let testPage = getIframeContent(ifId);
-            if (isTestAnswered(testPage, continueButtonClass)) {
-                return { 'status': 'ok', 'data': getQuestions(testPage) }
+            let testPage = getIframeContent("PR_EndUserDashboardIfr");
+            if (isTestAnswered(testPage)) {
+                return { 'status': 0, 'data': getQuestions(testPage) }
             } else {
-                return { 'status': 0 };
+                return { 'status': (isTestPage(testPage) ? 3 : 4) };
             }
-        } 
+        }
 
         function getIframeContent(iframeId) {
             let iframe = document.getElementById(iframeId);
             return iframe.contentDocument || iframe.contentWindow.document;
         }
 
-        function isTestAnswered(el, clazz) {
-            let candidates = el.getElementsByClassName(clazz);
+        function isTestAnswered(el) {
+            let candidates = el.getElementsByClassName("LessonNavComplete");
             return candidates && candidates.length == 1;
         }
-
+        function isTestPage(el) {
+            let candidates = el.getElementsByClassName("LessonNav");
+            for (let i = candidates.length; i; i--) {
+                let c = candidates[i - 1];
+                if (c && c.dataset && c.dataset.click && c.dataset.click.indexOf('AdvanceFromQuiz') > -1) {
+                    return true;
+                }
+            }
+            return false;
+        }
         function getQuestions(el) {
             const bestClassToGetQuestions = 'item-3 RichTextContent';
             let cadidatesSections = el.getElementsByClassName(bestClassToGetQuestions),

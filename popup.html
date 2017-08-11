@@ -5,7 +5,7 @@
   <title>Academy miner for Drill</title>
 
   <link rel="stylesheet" href="style/main.css">
-  <!--<script src="js/dev.js"></script>-->
+  <!--<script src="js/dev.js"></script> -->
   <script src="js/parser.js"></script>
   <script src="js/support.js"></script>
 </head>
@@ -13,13 +13,8 @@
 <body class="">
   <section class="header">
   </section>
-  <section class="succShortSection">
-    <span class="info">Data ready in your Cliboard</span>
-    <button id="full">Full view</button>
-  </section>
-  <section class="succLongSection">
-    <span class="noCLBsupport">Copy is not supported, <br> use Ctrl+A & Ctrl+C </span>
-    <textarea class="fullTxt" id="drillText" >
+  <section class="successText">
+    <textarea class="fullTxt" id="drillText" style="display: block">
 1 Which of the following tools would you use to generate the application structure in Pega 7? (Choose One)
 A) Application Accelerator
 B) Application Profiler
@@ -43,6 +38,14 @@ B) Use Application Express
 C) Add it manually
 D) Use Application Accelerator
     </textarea>
+  </section>
+  <section class="succShortSection">
+    <span class="info">Data ready</span>
+    <button id='copyToCLBShort'>Get to clipboard</button>
+    <button id="fullButton">Full view</button>
+  </section>
+  <section class="succLongSection">
+    <span class="noCLBsupport">Copy is not supported, <br> use Ctrl+A & Ctrl+C </span>
     <button id='copyToCLB'> Copy to Cliboard </button>
   </section>
   <section class="infoError">
