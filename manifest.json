@@ -1,10 +1,13 @@
 {
   "manifest_version": 2,
-
-  "name": "Pega drill",
-  "description": "This extension shows a Google Image search result for the current page",
+  "name": "Miner for drill",
+  "description": "Captures Pega Academy quiz answers and transforms into Drill friendly text",
   "version": "1.0",
-
+  "icons": {
+    "16": "img/icon16.png",
+    "48": "img/icon48.png",
+    "128": "img/icon128.png"
+  },
   "browser_action": {
     "default_icon": "img/icon.png",
     "default_popup": "popup.html",
