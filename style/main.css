@@ -5,51 +5,42 @@
    margin: 2px;
  }
  
- .successText textarea {
-   width: 100%;
+ .content * {
+   display: none;
  }
  
- .succShort .succShortSection, .succLong .succLongSection, .succNoCLB .succLongSection, .badApp .badAppTxt, .badPageNA .badPageNATxt, .badPageNotQuiz .badPageNotQuizTxt, .badNotAnswered .badNotAnsweredTxt, .error .infoError {
-   display: block;
- }
- 
- .succLong .successText {
+ .content {
    margin-left: 5px;
    margin-right: 5px;
    text-align: center;
    min-height: 55px;
-   display: flex;
    justify-content: center;
    align-items: center;
  }
+ /* Handling error scenarions */
  
- .succShort .successText {
-   display: block;
-   position: fixed;
-   right: -1000px;
- }
- 
- .succShortSection, .succLongSection {
-   color: #175D34;
-   font-weight: bolder;
- }
- 
- .succShortSection, .succLongSection, .error .infoError {
-   margin-left: 5px;
-   margin-right: 5px;
+ .error .content {
+   color: #D36E4A;
+   font-weight: 700;
+   vertical-align: middle;
    text-align: center;
-   min-height: 55px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
  }
  
- #drillText {
-   font-size: 0.7em;
-   min-height: 400px;
+ .error .header {
+   background-color: #EA6E5E;
+   background-image: url(img/cloud-error.png);
  }
  
- .success button {
+ .badApp .badAppTxt, .badPageNA .badPageNATxt, .badPageNotQuiz .badPageNotQuizTxt, .badNotAnswered .badNotAnsweredTxt {
+   display: block;
+ }
+ /* Handling success scenarions */
+ 
+ .success .header {
+   background-color: #37DD7A;
+ }
+ 
+ .success .content button {
    margin-top: 10px;
    background-color: #37DD7A;
    border: none;
@@ -59,18 +50,36 @@
    font-size: 0.9em;
  }
  
- .infoError >* {
-   vertical-align: middle;
- }
- 
- .succShortSection > *, .succLongSection > * {
+ .success .content * {
    width: 100%;
    margin: auto;
+   color: #175D34;
+   font-weight: bolder;
  }
  
- .succShortSection, .succLongSection, .infoError>span, .succLong .succLongSection .noCLBsupport, .succNoCLB .succLongSection #copyToCLB, .infoError, .successText {
-   display: none;
+ .success .content #drillText {
+   display: block;
+   font-size: 0.7em;
+   min-height: 400px;
  }
+ 
+ .succShort .header, .succShortDone .header {
+   background-image: url(img/cloud-down.png);
+ }
+ 
+ .succShort #drillText,.succShortDone #drillText {
+   position: fixed;
+   left: -9999px;
+ }
+ 
+ .succShort .info, .succShort #copyToCLBShort, .succShort #fullButton, .succShortDone .infoDone,.succShortDone #fullButton, .succLong #copyToCLB, .succNoCLB .noCLBsupport {
+   display: block;
+ }
+ 
+ .succLong .header, .succNoCLB .header {
+   background-image: url(img/cloud-check.png);
+ }
+ /* Other */
  
  .header {
    width: 100%;
@@ -80,33 +89,6 @@
    margin: 0px;
    padding: 0px;
    margin-bottom: 10px;
- }
- 
- .success .header {
-   background-color: #37DD7A;
- }
- 
- .noCLBsupport {
-   display: block;
-   padding-bottom: 5px;
- }
- 
- .succLong .header, .succNoCLB .header {
-   background-image: url(img/cloud-check.png);
- }
- 
- .error {
-   color: #D36E4A;
-   font-weight: 700;
- }
- 
- .succShort .header {
-   background-image: url(img/cloud-down.png);
- }
- 
- .error .header {
-   background-color: #EA6E5E;
-   background-image: url(img/cloud-error.png);
  }
  
  .footer {

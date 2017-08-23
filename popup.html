@@ -5,7 +5,7 @@
   <title>Academy miner for Drill</title>
 
   <link rel="stylesheet" href="style/main.css">
-  <!--<script src="js/dev.js"></script> -->
+  <!--<script src="js/dev.js"></script>-->
   <script src="js/parser.js"></script>
   <script src="js/support.js"></script>
 </head>
@@ -13,8 +13,8 @@
 <body class="">
   <section class="header">
   </section>
-  <section class="successText">
-    <textarea class="fullTxt" id="drillText" style="display: block">
+  <section class="content">
+    <textarea class="fullTxt" id="drillText">
 1 Which of the following tools would you use to generate the application structure in Pega 7? (Choose One)
 A) Application Accelerator
 B) Application Profiler
@@ -38,17 +38,12 @@ B) Use Application Express
 C) Add it manually
 D) Use Application Accelerator
     </textarea>
-  </section>
-  <section class="succShortSection">
     <span class="info">Data ready</span>
+    <span class="infoDone">Data in your clipboard</span>
     <button id='copyToCLBShort'>Get to clipboard</button>
     <button id="fullButton">Full view</button>
-  </section>
-  <section class="succLongSection">
-    <span class="noCLBsupport">Copy is not supported, <br> use Ctrl+A & Ctrl+C </span>
     <button id='copyToCLB'> Copy to Cliboard </button>
-  </section>
-  <section class="infoError">
+    <span class="noCLBsupport">Copy is not supported, <br> use Ctrl+A & Ctrl+C </span>
     <span class="badAppTxt"> Sorry something went wrong, try to restart computer ...</span>
     <span class="badPageNATxt"> This page is not supported</span>
     <span class="badPageNotQuizTxt"> Go to Quiz page and answer questions first</span>

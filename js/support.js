@@ -14,6 +14,7 @@ const CSS_CLASSES = {
     BAD_PAGE_ON_ACADEMY: ['error', 'badPageNotQuiz'],
     BAD_ANSWER: ['error', 'badNotAnswered'],
     SUCC_SHORT: ['success', 'succShort'],
+    SUCC_SHORT_DONE: ['success','succShortDone'],
     SUCC_LONG: ['success', 'succLong'],
     SUCC_NO_CLIPBOARD: ['success', 'succNoCLB']
 }
@@ -126,6 +127,8 @@ document.addEventListener('DOMContentLoaded', function () {
         copyToCliboard(document.getElementById('drillText'));
     }
     document.getElementById('copyToCLBShort').onclick = function () {
-        copyToCliboard(document.getElementById('drillText'));
+        if(copyToCliboard(document.getElementById('drillText'))){
+            switchBodyClass(CSS_CLASSES.SUCC_SHORT_DONE);
+        }
     }
 });

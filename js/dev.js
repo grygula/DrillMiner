@@ -4,6 +4,7 @@ const CSS_CLASS_NAME = {
     BAD_PAGE_ON_ACADEMY:['error','badPageNotQuiz'],
     BAD_ANSWER: ['error','badNotAnswered'],
     SUCC_SHORT: ['success','succShort'],
+    SUCC_SHORT_DONE: ['success','succShortDone'],
     SUCC_LONG: ['success','succLong'],
     SUCC_NO_CLIPBOARD :['success','succNoCLB']
 }
