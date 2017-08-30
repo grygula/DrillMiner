@@ -30,8 +30,10 @@ If the extension is valid, it'll be loaded up and active right away!
 Report it via: https://bitbucket.org/pgsys/drillminer/issues
 
 * Why Extension is in development mode and not official
+
 Because it costs money :-) not a lot but still
 * Can I contribute to the project?
+
 Sure, just let me know or fork the project on BitBucket
 
 
@@ -39,6 +41,7 @@ Sure, just let me know or fork the project on BitBucket
 * [Vanilla JS](http://vanilla-js.com/)
 * CSS
 * HTML
+
 Source code can be found here:
 https://bitbucket.org/pgsys/drillminer
 
