@@ -6,7 +6,8 @@ const STATUS_CODES = {
     INCORRECT_PAGE: 2,
     NO_ANSWERS: 3,
     NO_QUIZ_PAGE: 4,
-    NO_CLIPBOARD_SUPPORT: 5
+    NO_CLIPBOARD_SUPPORT: 5,
+    PRACTICE_EXAM_RESULT: 6
 }
 const CSS_CLASSES = {
     BAD_APP: ['error', 'badApp'],

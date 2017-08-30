@@ -1,11 +1,18 @@
 if (!miner) {
     var miner = (function () {
-        function run() {
+         const PAGE_STATUS = {
+            QUIZ_ANSWERED: 0,
+            QUIZ_NOT_ANSWERED: 1,
+            PRACTICE_EXAM_RECAP: 2,
+            OTHER_PAGE:4
+        }
+
+        function run(callback) {
             let testPage = getIframeContent("PR_EndUserDashboardIfr");
             if (isTestAnswered(testPage)) {
-                return { 'status': 0, 'data': getQuestions(testPage) }
-            } else {
-                return { 'status': (isTestPage(testPage) ? 3 : 4) };
+                callback ({ 'status': 0, 'data': getQuestions(testPage) });
+            } else{
+                callback ( { 'status': (isTestPage(testPage) ? 3 : 4) });
             }
         }
 
@@ -15,8 +22,21 @@ if (!miner) {
         }
 
         function isTestAnswered(el) {
-            let candidates = el.getElementsByClassName("LessonNavComplete");
-            return candidates && candidates.length == 1;
+            return (isQuizPageAnswered(el) || isPrepExamPageAnswered(el)) ;
+        }
+        function isQuizPageAnswered(el){
+            let candidatesQuizPage = el.getElementsByClassName("LessonNavComplete");
+            return candidatesQuizPage && candidatesQuizPage.length === 1;
+        }
+        function isPrepExamPageAnswered(el){
+            let candidates = el.getElementsByClassName('pzbtn-mid');
+            for(let i =candidates.length;i;i--){
+                let cand = candidates[i-1];
+                if (cand.innerText==='RE-SUBMIT'){
+                    return true;
+                }
+            }
+            return false;
         }
         function isTestPage(el) {
             let candidates = el.getElementsByClassName("LessonNav");
@@ -78,7 +98,7 @@ if (!miner) {
     })();
     chrome.runtime.onMessage.addListener(function (msg, _, sendResponse) {
         if (msg === "run") {
-            sendResponse(miner.run());
+            miner.run(sendResponse);
         }
     });
 }
