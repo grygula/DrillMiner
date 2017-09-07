@@ -1,6 +1,6 @@
 # Drill Miner
 ## Abstract
-Chrome extension to extract quizzes from Academy in [Drill 2](https://github.com/gronostajo/drill2) friendly format
+Chrome extension to extract quizzes from Academy in [Drill 2](https://github.com/gronostajo/drill2) friendly format.
 
 ## Description
 Drill miner is a Chrome Extension allowing to extract Academy questions and answers from training quizzes and prep exams.
