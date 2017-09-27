@@ -7,9 +7,9 @@ Drill miner is a Chrome Extension allowing to extract Academy questions and answ
 
 Results are stored in Clipboard and are ready to be append to the text file for  [Drill 2](https://github.com/gronostajo/drill2) 
 
-Quiz walkthru video:https://youtu.be/-HPB-36BDio
+Quiz walkthrough video:https://youtu.be/-HPB-36BDio
 
-Practice exam walkthru video:https://youtu.be/OgnxGIoRFVY
+Practice exam walkthrough video:https://youtu.be/OgnxGIoRFVY
 
 
 ## Installation
@@ -20,15 +20,11 @@ Practice exam walkthru video:https://youtu.be/OgnxGIoRFVY
 5. Click Load unpacked extension to pop up a file-selection dialog.
 6. Navigate to the directory in which your extension files live, and select it.
 
-Video walkthru of the installation: https://youtu.be/EFXC6H-TQZA
-
-Alternatively, you can drag and drop the directory where your extension files live onto [chrome://extensions](chrome://extensions) in your browser to load it.
-If the extension is valid, it'll be loaded up and active right away!
-
+Video walkthrough of the installation: https://youtu.be/EFXC6H-TQZA
 
 ## Limitations
-* Prep exam page detection can be tricky, code will look for Re-Submit button, if missing then go to review page and retake one of exam topics_
-* Extension is in developer mode, it cannot be obtain from Google Store - Chrome can complain about it if extension is enabled
+* Prep exam page detection can be tricky, code will look for Re-Submit button, if missing then go to review page and retake one of exam topics
+* Extension is in developer mode, it cannot be obtain from Google Store - Chrome can complain about it
 
 ## FAQ
 * I see ~~dead people~~ error
