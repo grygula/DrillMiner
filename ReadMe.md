@@ -3,9 +3,12 @@
 Chrome extension to extract quizzes from Academy in [Drill 2](https://github.com/gronostajo/drill2) friendly format.
 
 ## Description
-Drill miner is a Chrome Extension allowing to extract Academy questions and answers from training quizzes and prep exams.
+Drill miner is a Chrome Extension allowing to extract Academy questions and answers from training quizzes and practice exams.
 
-Results are stored in Clipboard and are ready to be append to text file later used by [Drill 2](https://github.com/gronostajo/drill2) 
+Results are stored in Clipboard and are ready to be append to the text file for  [Drill 2](https://github.com/gronostajo/drill2) 
+
+Quiz walkthru video:
+Practice exam walkthru video:
 
 ## Installation
 1. Download [latest zip file](https://github.com/grygula/DrillMiner/releases) , 
@@ -15,6 +18,7 @@ Results are stored in Clipboard and are ready to be append to text file later us
 5. Click Load unpacked extension to pop up a file-selection dialog.
 6. Navigate to the directory in which your extension files live, and select it.
 
+Video walkthru of the installation: https://youtu.be/EFXC6H-TQZA
 
 Alternatively, you can drag and drop the directory where your extension files live onto [chrome://extensions](chrome://extensions) in your browser to load it.
 If the extension is valid, it'll be loaded up and active right away!
@@ -29,7 +33,7 @@ If the extension is valid, it'll be loaded up and active right away!
 
     Report it via [issues](https://github.com/grygula/DrillMiner/issues)
 
-* Why Extension is in development mode and not official
+* Why Extension is in development mode
 
     Because it costs money :-) not a lot but still
 
