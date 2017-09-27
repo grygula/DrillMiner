@@ -7,8 +7,10 @@ Drill miner is a Chrome Extension allowing to extract Academy questions and answ
 
 Results are stored in Clipboard and are ready to be append to the text file for  [Drill 2](https://github.com/gronostajo/drill2) 
 
-Quiz walkthru video:
-Practice exam walkthru video:
+Quiz walkthru video:https://youtu.be/-HPB-36BDio
+
+Practice exam walkthru video:https://youtu.be/OgnxGIoRFVY
+
 
 ## Installation
 1. Download [latest zip file](https://github.com/grygula/DrillMiner/releases) , 
